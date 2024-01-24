@@ -34,6 +34,7 @@ export default function Form() {
         }
     }
 
+    const today = new Date().toISOString().split('T')[0];
 
     return (
         <div className='container'>
@@ -53,6 +54,7 @@ export default function Form() {
                         name='date'
                         type="date" 
                         value={date}
+                        min={today}
                         onChange={(e)=> setDate(e.target.value)}
                     />
                     <button className='add' onClick={handleClick}>Add</button>
